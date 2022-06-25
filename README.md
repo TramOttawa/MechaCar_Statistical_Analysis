@@ -34,15 +34,15 @@ Let have a look at the following figtures:
 
 ![T_test](https://user-images.githubusercontent.com/100484606/175755400-9197a585-18d9-439e-85e6-52bfabadc622.JPG)
 
-From the summary, we see the P-value for all lots is around 0.06 which is greater than the significant level 0.05. Therefore, it is fail to reject the null hypothesis, that means the population mean is no statistical difference from 1500 pounds per square inch.
+* From the summary, we see the P-value for all lots is around 0.06 which is greater than the significant level 0.05. Therefore, it is fail to reject the null hypothesis, that means the population mean is no statistical difference from 1500 pounds per square inch.
 
 ![T_test_Lot1_2_3](https://user-images.githubusercontent.com/100484606/175755402-9dc651af-9bf3-4089-9398-7834c1e7b60c.JPG)
 
-The T-test for lot 1: from the summary we can see the P-value is around 1 which is greater than the significant level 0.05. It is fail to reject the null hypothesis, that means the sample mean is no statistical difference to 1500 pounds per square inch. Also the mean of Plot1 itself is 1500.
+* The T-test for lot 1: from the summary we can see the P-value is around 1 which is greater than the significant level 0.05. It is fail to reject the null hypothesis, that means the sample mean is no statistical difference to 1500 pounds per square inch. Also the mean of Plot1 itself is 1500.
 
-The T-test for lot 2, from the summary we can see the P-value is around 0.61 which is greater than the significant level 0.05. It is fail to reject the null hypothesis, that means the sample mean is no statistical difference to 1500 pounds per square inch.
+* The T-test for lot 2, from the summary we can see the P-value is around 0.61 which is greater than the significant level 0.05. It is fail to reject the null hypothesis, that means the sample mean is no statistical difference to 1500 pounds per square inch.
 
-The T-test for lot 3, from the summary we can see the P-value is around 0.04 which is smaller than the significant level 0.05. It is good to reject the null hypothesis, that means the sample mean is a statistical difference to 1500 pounds per square inch.
+* The T-test for lot 3, from the summary we can see the P-value is around 0.04 which is smaller than the significant level 0.05. It is good to reject the null hypothesis, that means the sample mean is a statistical difference to 1500 pounds per square inch.
 
 ## Study Design: MechaCar vs. Competition
 
