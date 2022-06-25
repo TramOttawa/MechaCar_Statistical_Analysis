@@ -56,5 +56,5 @@ In this study design, the MechaCar data can be analyzed against the competition.
 We would use Multiple Linear Regression test to test the hypothesis. There are 2 numeric independent variables and a numeric dependent variable and we want to test on how independent variables combination affected the dependent variable.
 
 * What data is needed to run the statistical test? 
-The dataset we need to run the statistical test are the sample size which is large enough for each class of car and it must have same amount of sample; price and maintenance cost must be continuous numeric as independent variables and safety rating must be continuous numeric as dependant.
+The dataset we need to run the statistical test are the sample size which is large enough for each class of car and it must have same amount of sample; price and maintenance cost must be continuous numeric data as independent variables and safety rating must be continuous numeric data as dependant.
 
