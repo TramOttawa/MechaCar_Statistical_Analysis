@@ -23,34 +23,38 @@ The MechaCar prototypes were produced using multiple design specifications to id
 
 Let have a look at the following figtures:
 
-![Variance_in_PSI](https://user-images.githubusercontent.com/100484606/175492201-07573f6c-d271-4e5e-944b-598a1bdf2b39.JPG)
+![Variance_in_PSI](https://user-images.githubusercontent.com/100484606/175755180-b23d8c9b-fa16-4ac6-ae17-660b019ff288.JPG)
 
 ![Variance_in_PSI_grouped_bylot](https://user-images.githubusercontent.com/100484606/175491924-3e68b945-540f-465c-8221-c71288647c13.JPG)
 
 * The current manufacturing data, for all manufacturing lots in total, has the variance of 62.29 pounds per square inch. It meets the design specification that it does not exceed 100 pounds/square inch. The variances of each lot are shown in the image above. Lot1: 0.98, Lot2: 7.47 meet the design specification, but Lot3 (170.29) is over the specification about 70 pound/square inch, which make Lot3 does not meet the design specification.
 
 ## T-Tests on Suspension Coils
-* Suspension Coils Cumulative T-test
+* Suspension Coils Cumulative T-test: T-tests was performed on Suspension_Coil.csv dataset to determine if all manufacturing lots and each lot individually are statistically different from the population mean of 1,500 pounds per square inch. Which null hypothesis is population mean equal to 1500 pounds per square inch, and alternative hypothesis is population mean not equal to 1500 pounds per square inch.
 
-* A review of the results of the T-test for the suspension coils across all manufacturing lots shows that they are not statistically different from the population mean, and the p-value is not low enough (0.0603) for us to reject the null hypothesis.
+![T_test](https://user-images.githubusercontent.com/100484606/175755400-9197a585-18d9-439e-85e6-52bfabadc622.JPG)
 
-* A review of the results of the T-test for the suspension coils for Lot 2 shows that they are not statistically different from the population mean, and the p-value is not low enough (0.6072) for us to reject the null hypothesis.
+From the summary, we see the P-value for all lots is around 0.06 which is greater than the significant level 0.05. Therefore, it is fail to reject the null hypothesis, that means the population mean is no statistical difference from 1500 pounds per square inch.
+
+![T_test_Lot1_2_3](https://user-images.githubusercontent.com/100484606/175755402-9dc651af-9bf3-4089-9398-7834c1e7b60c.JPG)
+
+The T-test for lot 1: from the summary we see the P-value is around 1 its greater than the significant level 0.05. It is fail to reject the null hypothesis, that means the sample mean is no statistical difference to 1500 pounds per square inch. Also the mean of Plot1 itself is 1500.
+
+The T-test for lot 2, from the summary we see the P-value is around 0.61 its greater than the significant level 0.05. It is fail to reject the null hypothesis, that means the sample mean is no statistical difference to 1500 pounds per square inch.
+
+The T-test for lot 3, from the summary we see the P-value is around 0.04 its smaller than the significant level 0.05. It is good to reject the null hypothesis, that means the sample mean is a statistical difference to 1500 pounds per square inch.
 
 ## Study Design: MechaCar vs. Competition
 
-To further aid AutosRU in improving their MechaCar prototype for maximal performance against the competition, designing another study design may be worth further analysis to compare metrics with competitors. In this study design, the MechaCar data could be analyzed against one or more competitor's comparable data to highlight a variety of metrics which may be of interest to potential consumers as well as AutosRU's manufacturing.
+In this study design, the MechaCar data can be analyzed against the competition. There are some factors can be put into consideration such as the cost, city or highway fuel efficiency, horse power, maintenance cost, or safety rating.
 
-* Choosing a metric to test:
-Although there a multitude of possible metrics to consider, it may be useful to focus on how MechaCar's mean highway fuel efficiency (measured in MGP) in particular and compare it to the mean value of multiple competitors. To do this, it would be ideal to compare vehicles which are as similar as possible as this could theoretically minimize "statistical noise" when attempting to determine statistical significance.
+* I am going to test the metric of car prices, maintenance cost and safety rating, which are in my opinion, the most consumers' concern.
 
-* What is the null hypothesis or alternative hypothesis?
-Once we have selected a metric to analyize, it is imperative to identify our null and alternative hypotheses. The null hypothesis, in this case, would be that there is no statistical difference between the fuel efficiency of the MechaCar prototype and the fuel efficiency of competitors. Of course, this would mean the alternative hypotheses would be that there is indeed a statistical difference.
+* What is the null hypothesis or alternative hypothesis? Null Hypothesis would be that the car prices and maintenance cost coefficients correlation to safety rating from each class of car (small family car, large family car, supermini or executive); And Alternative Hypothesis would be all car prices and maintenance cost not coefficients correlation to safety rating from each classes of car.
 
 * What statistical test would you use to test the hypothesis? And why?
-In order to test the hypotheis that there is no statistical difference between the MechaCar prototype and the fuel efficiency of competitors, we could use a one-way ANOVA test. Also known as the analysis of variance test, the ANOVA test would allow us to test the null hypothesis that the means of all groups are equal. As such, this would correspond well with our original orchestration of the null hypothesis. In this case, the sample means would include MechaCar's MPG values and mean MPG values from samples of similar competitor vehicles.
+We would use Multiple Linear Regression test to test the hypothesis. There are 2 numeric independent variables and a numeric dependent variable and we want to test on how independent variables combination affected the dependent variable.
 
-* What data is needed to run the statistical test?
-To perform this ANOVA test, we would need one continous, numerical variable for the dependent variable and MPG would satisfy that requirement. For the independent variable specification when using ANOVA, we could compare vehicles of the same class using multiple categorical variables which would be the different vehicles for comparison, including the MechaCar prototype. Furthermore, we would want the sample sizes of each group to be sufficiently large (at least 30) and we would also operate under the assumption that the dependent variable (MPG) is normally distributed and that the variance among each group is similar.
+* What data is needed to run the statistical test? 
+The dataset we need to run the statistical test are the sample size are large enough for each classes of car must have same amount of sample, price and maintenance cost must be continous numeric as independent variables and safety rating must be continous numeric as dependent variable as well. 
 
-* How to analyze the results:
-We could use R's aov() method to run the ANOVA test and use R's summary() function to retrieve the summary statistics which would house our p-value. If the p-value resulted in a value below 0.05 (assuming a 95% confidence level) we would have sufficient statistical reasoning to reject the null hypotheses that the means for all groups were equal. Note, one limitation of the ANOVA test would be that we would not be able to tell which categorical variable(s) was/were the culprit for the statistical significance. However, supposing we reject the null based on this test result, we could also rerun the anova test without the MechaCar sample MPG and compare the competitors to check that their means were all statistically the same without the MechaCar prototype. This may provide us additional insight about MechaCar's contribution to the statistical significance. In any case, the ANOVA test can prove quite useful for comparing the means of a continous numerical variable across multiple categorical variables and could aid AutosRU in understanding better how their prototype fares against the competition.
